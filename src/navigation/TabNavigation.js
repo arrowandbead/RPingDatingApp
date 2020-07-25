@@ -19,6 +19,11 @@ export default function MainNavigation() {
     }
     return(
         <Tab.Navigator initialRoute = 'Adventures'>
+          <Tab.Screen name="Tavern" component = {TavernScreen}
+            options={{
+                tabBarIcon: ({ color }) => <FontAwesome name="beer" color={color} size={25} />,
+              }} 
+            />
             <Tab.Screen name="Adventures" component = {AdventuresScreen}
             options={{
                 tabBarIcon: ({ color }) => <MaterialCommunityIcons name="sword-cross" color={color} size={25} />,
@@ -32,11 +37,6 @@ export default function MainNavigation() {
                  options={{
                     tabBarIcon: ({ color }) => <Feather name="settings" color={color} size={25}/>,
                   }}/>
-            <Tab.Screen name="Tavern" component = {TavernScreen}
-            options={{
-                tabBarIcon: ({ color }) => <FontAwesome name="beer" color={color} size={25} />,
-              }} 
-            />
         </Tab.Navigator>
         )
 }
