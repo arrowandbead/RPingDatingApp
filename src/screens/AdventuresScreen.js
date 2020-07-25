@@ -13,36 +13,36 @@ const DATA = [
     {
         id: 'bd7acbea-c1b1-46c2-aeddasa5-3ad53abb28ba',
         title: 'First Item',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD"
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa"
       },
       {
         id: '3ac68afc-c605-48d3-dda4f8-fbd91aa97f63',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Second Item',
       },
       {
         id: '58694a0f-3da1-471dasf-bd96-145571e29d72',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Third Item',
       },
       {
         id: '3ac68afc-c605-48ddahs3-a4f8-fbd91aa97f63',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Second Item',
       },
       {
         id: '58694a0f-3da1-47dsa1df-bd96-145571e29d72',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Third Item',
       },
       {
         id: '3ac68afc-c605-48d3-dafa4f8-fbd91aa97f63',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Second Item',
       },
       {
         id: '58694a0f-3da1-471f-dsabhd96-145571e29d72',
-        lastmessage: "My baby don't need no juice, she's got the LORDDDDD",
+        lastmessage: "My baby don't need no juice, she's got the LORDDDDDjdsiadjisa",
         title: 'Third Item',
       },
     ]
@@ -206,6 +206,8 @@ const styles = {
     },
     lastmessageHolder : {
         flex : 1,
+        borderTopRightRadius : 10,
+        borderBottomRightRadius : 10,
         justifyContent : "center",
         backgroundColor : "pink"
     }
