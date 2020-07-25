@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
-
+import { signout } from '../services/firebase/account'
+import { Link } from "react-router-native"
 
 
 class SettingsScreen extends Component{
     componentDidMount(){
-        //ssss
         console.log("did mount")
     }
 
@@ -13,12 +13,13 @@ class SettingsScreen extends Component{
         return(
             <View>
                 <Text>SettingsScreen</Text>
-                <TouchableOpacity style={styles.logoutButton} title="Login" onPress={() => this.props.navigation.replace("LoginScreen")}>
+                <TouchableOpacity style={styles.logoutButton} title="Logout" onPress={signout}>
+                <Link to="/tabnavigator">
                     <Text>
-                        wewew
+                        gjhghjkghjkghjghjghgkjhhg
                     </Text>
+                </Link>
                 </TouchableOpacity>
-
             </View>
         )
     }
@@ -27,6 +28,8 @@ class SettingsScreen extends Component{
 const styles = StyleSheet.create({
     logoutButton: {
       backgroundColor: 'blue',
+      marginTop: 20,
+      padding: 20,
     },
   });
 

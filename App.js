@@ -24,6 +24,17 @@ export function PrivateRoute({ component: Component, authenticated, ...rest }) {
   )
 }
 
+export function PublicRoute({ component: Component, authenticated, ...rest }) {
+  return (
+    <Route
+      {...rest}
+      render={(props) => authenticated === false
+        ? <Component {...props} />
+        : <Redirect to={{ pathname: '/tabnavigator', state: { from: props.location } }} />}
+    />
+  )
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -34,11 +45,13 @@ class App extends Component {
   }
   // check whether user is logged in
   async componentDidMount() {
-    await Expo.Font.loadAsync({
+    await Font.loadAsync({
       Cochin: require("./assets/fonts/Cochin-LT-Font.ttf"),
     });
     
     auth().onAuthStateChanged(user => {
+      console.log("Authchange")
+      console.log(user)
       if (user) {
         this.setState({
           authenticated: true,
@@ -59,9 +72,9 @@ class App extends Component {
     ) : (
         <Router>
           <Switch>
-            <Route exact path="/" component={LoginScreen} />
-            <Route exact path="/login" component={LoginScreen} />
-            <Route exact path="/register" component={RegisterScreen} />
+            <PublicRoute exact authenticated={this.state.authenticated} path="/" component={LoginScreen} />
+            <PublicRoute authenticated={this.state.authenticated} path="/login" component={LoginScreen} />
+            <PublicRoute authenticated={this.state.authenticated} path="/register" component={RegisterScreen} />
             <PrivateRoute
               path="/tabnavigator"
               authenticated={this.state.authenticated}

@@ -2,10 +2,8 @@ import React, { Component } from 'react'
 import {StyleSheet, Text, View, TouchableOpacity} from 'react-native'
 import colorScheme from '../../color_scheme.js'
 import { TextInput } from 'react-native-gesture-handler'
-import { signin, signup } from '../services/firebase/account'
-import {
-    Link, Redirect
-  } from "react-router-native";
+import { signin, signup, signout } from '../services/firebase/account'
+import { Link } from "react-router-native"
 
 const Screens = {
     LOGIN: 'Login',
@@ -17,15 +15,12 @@ const Screens = {
 class LoginButton extends Component{
     constructor(props) {
         super(props)
-        this.props.onPress = this.props.onPress.bind(this)
     }
     render(){
         return(
             <View>
                 <TouchableOpacity style={styles.loginButton} title="Login" onPress={this.props.onPress}>
-                <Link to="/tabnavigator">
                     <Text style={styles.loginText}>Login</Text>
-                </Link>
                 </TouchableOpacity>
                 
                 <Link to="/register"><Text>Need to register?</Text></Link>
@@ -38,17 +33,14 @@ class LoginButton extends Component{
 class RegisterButton extends Component{
     constructor(props) {
         super(props)
-        this.props.onPress = this.props.onPress.bind(this)
     }
     render(){
         return(
             <View>
                 <TouchableOpacity style={styles.loginButton} title="Login" onPress={this.props.onPress}>
-                    <Link to="/tabnavigator">
                         <Text style={styles.loginText}>Register</Text>
-                    </Link>
                 </TouchableOpacity>
-                <Link to="/login"><Text>Already have an account?</Text></Link>
+                <Link to="/"><Text>Already have an account?</Text></Link>
             </View>
         )
     }
@@ -93,6 +85,7 @@ class EnterScreen extends Component {
             }
         } catch (error) {
             this.setState({...this.state, error: error.message });
+            await signout()
         }
     }
 
