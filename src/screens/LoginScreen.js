@@ -44,7 +44,7 @@ class LoginScreen extends Component{
 
 const styles = StyleSheet.create({
     loginButton: {
-      backgroundColor: colorScheme.defaultButtonColor,
+      backgroundColor: colorScheme.defaultButton,
       width : "50%",
       height: 30,
       borderRadius: 10,
