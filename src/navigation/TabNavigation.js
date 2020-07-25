@@ -18,7 +18,12 @@ export default function MainNavigation() {
         headerLeft: null
     }
     return(
-        <Tab.Navigator initialRoute = 'CharacterSheet'>
+        <Tab.Navigator initialRoute = 'Adventures'>
+            <Tab.Screen name="Adventures" component = {AdventuresScreen}
+            options={{
+                tabBarIcon: ({ color }) => <MaterialCommunityIcons name="sword-cross" color={color} size={25} />,
+              }}
+              />
             <Tab.Screen name="CharacterSheet" component = {CharacterSheetScreen} 
                 options={{
                     tabBarIcon: ({ color }) => <FontAwesome5 name="scroll" color={color} size={25}/>,
@@ -32,11 +37,6 @@ export default function MainNavigation() {
                 tabBarIcon: ({ color }) => <FontAwesome name="beer" color={color} size={25} />,
               }} 
             />
-            <Tab.Screen name="Adventures" component = {AdventuresScreen}
-            options={{
-                tabBarIcon: ({ color }) => <MaterialCommunityIcons name="sword-cross" color={color} size={25} />,
-              }}
-              />
         </Tab.Navigator>
         )
 }
