@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import {Text, View, FlatList, SafeAreaView, Image} from 'react-native'
 import colorScheme from '../../color_scheme'
-import { withTheme } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 
 
@@ -133,7 +132,7 @@ const styles = {
         borderRadius : 20,
         width : "98%",
         height : "14%",
-        borderWidth : "2px",
+        borderWidth : 2,
         borderColor : colorScheme.adventuresTitleBackground,
     },
     conversations : {
@@ -141,7 +140,7 @@ const styles = {
         flex : 1,
         borderColor : "blue",
         borderRadius : 11,
-        borderWidth : "2px"
+        borderWidth : 2
       },
     item: {
         backgroundColor: '#f9c2ff',
@@ -170,7 +169,7 @@ const styles = {
         marginBottom : 3,
         borderRadius : 10,
         backgroundColor : "white",
-        borderWidth : "1px"
+        borderWidth : 1
 
     },
     title: {
